@@ -1,0 +1,7 @@
+---
+- name: Provision host object in Foreman
+  hosts: localhost
+  gather_facts: false
+
+  roles:
+    - foreman_host

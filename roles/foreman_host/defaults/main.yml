@@ -1,0 +1,59 @@
+---
+# Foreman API connection
+foreman_server_url: "https://foreman.lab.duncan-networks.com"
+foreman_username: "admin"
+foreman_password: "changeme"
+foreman_validate_certs: false
+
+# Foreman host identity
+foreman_host_name: "testvm.lab.duncan-networks.com"
+foreman_host_state: present
+
+# Organization / Location
+foreman_organization: "Default Organization"
+foreman_location: "Default Location"
+
+# Lifecycle / content if using Katello
+foreman_lifecycle_environment: "Library"
+foreman_content_view: "Default Organization View"
+
+# Host group - optional but recommended if you use host groups
+foreman_hostgroup: ""
+
+# Provisioning details
+foreman_domain: "lab.duncan-networks.com"
+foreman_realm: "LAB.DUNCAN-NETWORKS.COM"
+foreman_architecture: "x86_64"
+foreman_operating_system: "RedHat 9.0"
+foreman_ptable: "Kickstart default"
+foreman_medium: "RHEL9 HTTPS Install Media"
+foreman_build: true
+foreman_managed: true
+foreman_enabled: true
+
+# PXE / provisioning
+foreman_pxe_loader: "PXELinux BIOS"
+# Other common values:
+# - "Grub2 UEFI"
+# - "Grub2 UEFI SecureBoot"
+# - "iPXE Embedded"
+
+# Physical interface
+foreman_interface_identifier: "ens160"
+foreman_interface_mac: "00:50:56:aa:bb:cc"
+foreman_interface_ip: ""
+foreman_interface_type: "interface"
+foreman_interface_managed: true
+foreman_interface_primary: true
+foreman_interface_provision: true
+foreman_interface_virtual: false
+
+# Network objects in Foreman
+foreman_subnet: "lab-dhcp-subnet"
+
+# Optional host parameters
+foreman_host_parameters:
+  - name: "kt_activation_keys"
+    value: "rhel9-ak"
+  - name: "remote_execution_ssh_user"
+    value: "iam"
