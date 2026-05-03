@@ -1,0 +1,58 @@
+---
+- name: Validate required Foreman variables
+  ansible.builtin.assert:
+    that:
+      - foreman_server_url | length > 0
+      - foreman_username | length > 0
+      - foreman_password | length > 0
+      - foreman_host_name | length > 0
+      - foreman_organization | length > 0
+      - foreman_location | length > 0
+      - foreman_domain | length > 0
+      - foreman_operating_system | length > 0
+      - foreman_architecture | length > 0
+      - foreman_interface_identifier | length > 0
+      - foreman_interface_mac | length > 0
+    fail_msg: "One or more required Foreman variables are missing."
+
+- name: Build host definition without hostgroup
+  ansible.builtin.set_fact:
+    foreman_host_definition:
+      server_url: "{{ foreman_server_url }}"
+      username: "{{ foreman_username }}"
+      password: "{{ foreman_password }}"
+      validate_certs: "{{ foreman_validate_certs }}"
+      name: "{{ foreman_host_name }}"
+      organization: "{{ foreman_organization }}"
+      location: "{{ foreman_location }}"
+      domain: "{{ foreman_domain }}"
+      realm: "{{ foreman_realm }}"
+      architecture: "{{ foreman_architecture }}"
+      operatingsystem: "{{ foreman_operating_system }}"
+      ptable: "{{ foreman_ptable }}"
+      medium: "{{ foreman_medium }}"
+      build: "{{ foreman_build }}"
+      managed: "{{ foreman_managed }}"
+      enabled: "{{ foreman_enabled }}"
+      pxe_loader: "{{ foreman_pxe_loader }}"
+      interfaces:
+        - type: "{{ foreman_interface_type }}"
+          identifier: "{{ foreman_interface_identifier }}"
+          mac: "{{ foreman_interface_mac }}"
+          ip: "{{ foreman_interface_ip | default(omit) }}"
+          domain: "{{ foreman_domain }}"
+          subnet: "{{ foreman_subnet }}"
+          managed: "{{ foreman_interface_managed }}"
+          primary: "{{ foreman_interface_primary }}"
+          provision: "{{ foreman_interface_provision }}"
+          virtual: "{{ foreman_interface_virtual }}"
+      parameters: "{{ foreman_host_parameters }}"
+      state: "{{ foreman_host_state }}"
+
+- name: Add hostgroup if defined
+  ansible.builtin.set_fact:
+    foreman_host_definition: "{{ foreman_host_definition | combine({'hostgroup': foreman_hostgroup}) }}"
+  when: foreman_hostgroup | length > 0
+
+- name: Create or update Foreman host
+  theforeman.foreman.host: "{{ foreman_host_definition }}"
