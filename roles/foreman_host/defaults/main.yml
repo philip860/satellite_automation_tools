@@ -1,9 +1,5 @@
 ---
-# Foreman API connection
-foreman_server_url: "https://foreman.lab.duncan-networks.com"
-foreman_username: "admin"
-foreman_password: "changeme"
-foreman_validate_certs: false
+
 
 # Foreman host identity
 foreman_host_name: "testvm.lab.duncan-networks.com"
