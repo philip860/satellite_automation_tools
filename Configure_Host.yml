@@ -3,5 +3,8 @@
   hosts: localhost
   gather_facts: false
 
+  vars_files:
+    - vars/vault.yml
+
   roles:
     - foreman_host
