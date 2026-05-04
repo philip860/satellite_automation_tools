@@ -6,7 +6,7 @@ foreman_password: "{{ vault_foreman_password }}"
 foreman_validate_certs: "{{ vault_foreman_validate_certs | default(false) }}"
 
 # Foreman host identity
-foreman_host_name: "testvm.lab.duncan-networks.com"
+foreman_host_name: "dev0-vm.lab.duncan-networks.com"
 foreman_host_state: present
 
 # Organization / Location
