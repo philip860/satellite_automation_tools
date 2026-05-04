@@ -32,6 +32,7 @@
       ptable: "{{ foreman_ptable }}"
       medium: "{{ foreman_medium }}"
       build: "{{ foreman_build }}"
+      root_pass: "{{ foreman_root_pass }}"
       managed: "{{ foreman_managed }}"
       enabled: "{{ foreman_enabled }}"
       pxe_loader: "{{ foreman_pxe_loader }}"
