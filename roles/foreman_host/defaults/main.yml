@@ -1,5 +1,9 @@
 ---
-
+# Foreman API connection
+foreman_server_url: "{{ vault_foreman_server_url }}"
+foreman_username: "{{ vault_foreman_username }}"
+foreman_password: "{{ vault_foreman_password }}"
+foreman_validate_certs: "{{ vault_foreman_validate_certs | default(false) }}"
 
 # Foreman host identity
 foreman_host_name: "testvm.lab.duncan-networks.com"
@@ -13,7 +17,7 @@ foreman_location: "Default Location"
 foreman_lifecycle_environment: "Library"
 foreman_content_view: "Default Organization View"
 
-# Host group - optional but recommended if you use host groups
+# Host group - optional
 foreman_hostgroup: ""
 
 # Provisioning details
@@ -29,10 +33,6 @@ foreman_enabled: true
 
 # PXE / provisioning
 foreman_pxe_loader: "PXELinux BIOS"
-# Other common values:
-# - "Grub2 UEFI"
-# - "Grub2 UEFI SecureBoot"
-# - "iPXE Embedded"
 
 # Physical interface
 foreman_interface_identifier: "ens160"
