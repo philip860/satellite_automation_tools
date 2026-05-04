@@ -26,7 +26,7 @@ foreman_realm: "LAB.DUNCAN-NETWORKS.COM"
 foreman_architecture: "x86_64"
 foreman_operating_system: "Updated RHEL 9.7"
 foreman_ptable: "Kickstart default"
-foreman_medium: "RHEL9 HTTPS Install Media"
+foreman_medium: "RHEL 9 ISO HTTPS"
 foreman_build: true
 foreman_managed: true
 foreman_enabled: true
