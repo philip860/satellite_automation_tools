@@ -24,7 +24,7 @@ foreman_hostgroup: ""
 foreman_domain: "lab.duncan-networks.com"
 foreman_realm: "LAB.DUNCAN-NETWORKS.COM"
 foreman_architecture: "x86_64"
-foreman_operating_system: "RedHat 9.0"
+foreman_operating_system: "Updated RHEL 9.7"
 foreman_ptable: "Kickstart default"
 foreman_medium: "RHEL9 HTTPS Install Media"
 foreman_build: true
