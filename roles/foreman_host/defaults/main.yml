@@ -2,8 +2,13 @@
 # Foreman API connection
 foreman_server_url: "{{ vault_foreman_server_url }}"
 foreman_username: "{{ vault_foreman_username }}"
-foreman_root_pass: "{{ vault_foreman_password }}"
+foreman_password: "{{ vault_foreman_password }}"
 foreman_validate_certs: "{{ vault_foreman_validate_certs | default(false) }}"
+
+foreman_root_pass: "{{ foreman_password }}"
+
+
+
 
 # Foreman host identity
 foreman_host_name: "dev0-vm.lab.duncan-networks.com"
