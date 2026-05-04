@@ -45,7 +45,7 @@ foreman_interface_provision: true
 foreman_interface_virtual: false
 
 # Network objects in Foreman
-foreman_subnet: "lab-dhcp-subnet"
+foreman_subnet: "Home Network"
 
 # Optional host parameters
 foreman_host_parameters:
