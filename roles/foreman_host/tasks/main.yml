@@ -35,7 +35,7 @@
       managed: "{{ foreman_managed }}"
       enabled: "{{ foreman_enabled }}"
       pxe_loader: "{{ foreman_pxe_loader }}"
-      interfaces:
+      interfaces_attributes:
         - type: "{{ foreman_interface_type }}"
           identifier: "{{ foreman_interface_identifier }}"
           mac: "{{ foreman_interface_mac }}"
