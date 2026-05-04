@@ -5,7 +5,7 @@ foreman_username: "{{ vault_foreman_username }}"
 foreman_password: "{{ vault_foreman_password }}"
 foreman_validate_certs: "{{ vault_foreman_validate_certs | default(false) }}"
 
-foreman_root_pass: "{{ foreman_password }}"
+foreman_root_pass: "{{ vault_foreman_root_pass  }}"
 
 
 
