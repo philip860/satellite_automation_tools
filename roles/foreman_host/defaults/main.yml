@@ -10,8 +10,8 @@ foreman_host_name: "dev0-vm.lab.duncan-networks.com"
 foreman_host_state: present
 
 # Organization / Location
-foreman_organization: "Default Organization"
-foreman_location: "Default Location"
+foreman_organization: "duncan-networks.com"
+foreman_location: "Lab"
 
 # Lifecycle / content if using Katello
 foreman_lifecycle_environment: "Library"
